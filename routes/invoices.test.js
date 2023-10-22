@@ -35,7 +35,7 @@ describe("GET /invoices", () => {
 });
 
 describe("GET /invoices/:id", () => {
-  test("Gets a single company", async () => {
+  test("Gets a single invoice", async () => {
     const res = await request(app).get(`/invoices/${testInvoice.id}`);
     expect(res.statusCode).toBe(200);
     expect(res.body).toEqual({
@@ -60,7 +60,7 @@ describe("GET /invoices/:id", () => {
 });
 
 describe("POST /invoices", () => {
-  test("Creates a single company", async () => {
+  test("Creates a single invoice", async () => {
     const res = await request(app)
       .post("/invoices")
       .send({ comp_code: "apple", amt: 255 });
@@ -79,7 +79,7 @@ describe("POST /invoices", () => {
 });
 
 describe("PATCH /invoices/:id", () => {
-  test("Updates a single company info", async () => {
+  test("Updates a single invoice", async () => {
     const res = await request(app)
       .patch(`/invoices/${testInvoice.id}`)
       .send({ comp_code: "apple", amt: 255 });
@@ -104,7 +104,7 @@ describe("PATCH /invoices/:id", () => {
 });
 
 describe("DELETE /invoices/:id", () => {
-  test("Deletes a single company", async () => {
+  test("Deletes a single invoice", async () => {
     const res = await request(app).delete(`/invoices/${testInvoice.id}`);
     expect(res.statusCode).toBe(200);
     expect(res.body).toEqual({ msg: "Success" });

@@ -43,7 +43,7 @@ describe("GET /invoices/:id", () => {
         id: 1,
         amt: 100,
         paid: false,
-        add_date: "2023-10-20T05:00:00.000Z",
+        add_date: "2023-10-22T05:00:00.000Z",
         paid_date: null,
         company: {
           code: "apple",
@@ -69,7 +69,7 @@ describe("POST /invoices", () => {
       invoice: {
         comp_code: "apple",
         amt: 255,
-        add_date: "2023-10-20T05:00:00.000Z",
+        add_date: "2023-10-22T05:00:00.000Z",
         id: expect.any(Number),
         paid: false,
         paid_date: null,
@@ -88,7 +88,7 @@ describe("PATCH /invoices/:id", () => {
       invoice: {
         comp_code: "apple",
         amt: 255,
-        add_date: "2023-10-20T05:00:00.000Z",
+        add_date: "2023-10-22T05:00:00.000Z",
         id: expect.any(Number),
         paid: false,
         paid_date: null,

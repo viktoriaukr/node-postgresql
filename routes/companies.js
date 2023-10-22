@@ -36,6 +36,34 @@ router.get("/:code", async (req, res, next) => {
   }
 });
 
+// Updated code from further study
+// router.get("/:code", async (req, res, next) => {
+//   try {
+//     const { code } = req.params;
+//     const cResults = await db.query(
+//       `SELECT c.code, c.name, i.industry
+//       FROM companies AS c
+//       JOIN branches AS b ON c.code = b.comp_code
+//       JOIN industries AS i ON b.industry_code = i.code
+//       WHERE c.code = $1;`,
+//       [code]
+//     );
+//     const iResults = await db.query(
+//       `SELECT id FROM invoices WHERE comp_code=$1`,
+//       [code]
+//     );
+//     if (cResults.rows.length === 0) {
+//       throw new ExpressError("Invalid company code, page not found", 404);
+//     }
+//     const company = cResults.rows[0];
+//     const invoice = iResults.rows;
+//     company.invoices = invoice.map((inv) => inv.id);
+//     return res.json({ company: company });
+//   } catch (e) {
+//     return next(e);
+//   }
+// });
+
 router.post("/", async (req, res, next) => {
   try {
     const { name, description } = req.body;
